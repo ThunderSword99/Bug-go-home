@@ -1,5 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp.dll:
+    - LevelManager
+    - Stage
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -58,35 +61,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 11552}
+      Script: {instanceID: 11578}
     - Class: 114
-      Script: {instanceID: 11606}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11704}
+      Script: {instanceID: 11730}
     - Class: 114
-      Script: {instanceID: 11938}
+      Script: {instanceID: 11964}
     - Class: 114
-      Script: {instanceID: 12272}
+      Script: {instanceID: 12298}
     - Class: 114
-      Script: {instanceID: 12324}
+      Script: {instanceID: 12350}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12648}
     - Class: 114
-      Script: {instanceID: 12974}
+      Script: {instanceID: 13000}
     - Class: 114
-      Script: {instanceID: 13320}
+      Script: {instanceID: 13346}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 13364}
     - Class: 114
-      Script: {instanceID: 13634}
+      Script: {instanceID: 13660}
     - Class: 114
-      Script: {instanceID: 13736}
+      Script: {instanceID: 13762}
     - Class: 114
-      Script: {instanceID: 14014}
+      Script: {instanceID: 14040}
     - Class: 114
-      Script: {instanceID: 14348}
+      Script: {instanceID: 14374}
+    - Class: 114
+      Script: {instanceID: 15068}
+    - Class: 114
+      Script: {instanceID: 16988}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -586,6 +593,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 1322d66e16219c4b2336db222dd2f9e0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelManager
+  - hash:
+      serializedVersion: 2
+      Hash: dc83bfe0588984fab18d7a07559842ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Stage
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
