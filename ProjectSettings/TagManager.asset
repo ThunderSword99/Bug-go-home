@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Content
+  - TotalStarText
   layers:
   - Default
   - TransparentFX

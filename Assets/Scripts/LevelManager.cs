@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class LevelManager : MonoBehaviour
     public int numberOfLevels = 999;
 
     private List<GameObject> StageList = new List<GameObject>();
+    [SerializeField]
+    private int currentLevelSelected;
+    private int totalStar=0;
+
+    private void SetTotalStarText()
+    {
+        GameObject.FindGameObjectWithTag("TotalStarText").GetComponent<TMP_Text>().text = totalStar.ToString();
+    }
 
     void LoadLevel()
     {
@@ -38,12 +47,38 @@ public class LevelManager : MonoBehaviour
             }
             
         }
-        
+    }
+
+    private void GetRandomCurrentLevel()
+    {
+        currentLevelSelected = Random.Range(1,999);
+    }
+
+    private void UnlockStages()
+    {
+        foreach (GameObject go in StageList)
+        {
+            Stage newStage = go.GetComponent<Stage>();
+            if (newStage.getCurrentLevel()<=currentLevelSelected)
+            {
+                newStage.UnlockStage();
+                int star = Random.Range(1,4);
+                newStage.GetComponent<Stage>().SetStar(star);
+                totalStar+= star;
+            }
+        }
+    }
+
+    void Awake()
+    {
+        GetRandomCurrentLevel();
     }
 
     void Start()
     {
         LoadLevel();
+        UnlockStages();
+        SetTotalStarText();
     }
 
     void Update()

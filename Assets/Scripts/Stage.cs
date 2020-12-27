@@ -15,6 +15,49 @@ public class Stage : MonoBehaviour
     public GameObject Star2;
     public GameObject Star3;
 
+    
+
+    public void UnlockStage()
+    {
+        isLock = false;
+        LockGo.active = false;
+    }
+
+    public void SetLevel(int i)
+    {
+        currentLevel = i;
+    }
+
+    public int getCurrentLevel()
+    {
+        return currentLevel;
+    }
+
+    public void SetStar(int i)
+    {
+        switch(i)
+        {
+            case 1:
+                Star1.active = true;
+                Star2.active = false;
+                Star3.active = false;
+                break;
+            case 2:
+                Star1.active = true;
+                Star2.active = true;
+                Star3.active = false;
+                break;
+            case 3:
+                Star1.active = true;
+                Star2.active = true;
+                Star3.active = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+
     void Start()
     {
        TextGo.GetComponent<Text>().text = currentLevel.ToString();
@@ -27,8 +70,4 @@ public class Stage : MonoBehaviour
        }
     }
 
-    public void SetLevel(int i)
-    {
-        currentLevel = i;
-    }
 }

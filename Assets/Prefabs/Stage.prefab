@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5785403072292803573}
   - component: {fileID: 5785403072292803572}
   m_Layer: 5
-  m_Name: star2
+  m_Name: star3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,8 +287,8 @@ MonoBehaviour:
   TextGo: {fileID: 5785403073785814665}
   LockGo: {fileID: 5170979673440317123}
   Star1: {fileID: 5785403073011921073}
-  Star2: {fileID: 5785403072292803570}
-  Star3: {fileID: 5785403073812392391}
+  Star2: {fileID: 5785403073812392391}
+  Star3: {fileID: 5785403072292803570}
 --- !u!1 &5785403073011921073
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 5785403073812392394}
   - component: {fileID: 5785403073812392393}
   m_Layer: 5
-  m_Name: star3
+  m_Name: star2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
