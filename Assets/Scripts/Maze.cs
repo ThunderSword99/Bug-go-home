@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Maze : MonoBehaviour
 {
-    public GameObject wall;
-    public GameObject floor;
+    public GameObject wallprefab;
+    public GameObject cellPrefab;
+    public GameObject cellHolder;
     public int rows = 13;
     public int columns = 10;
 
@@ -16,7 +17,8 @@ public class Maze : MonoBehaviour
         {
             for (int j=0;j<columns;j++)
             {
-                Instantiate(floor,new Vector3((j * Screen.width)/rows, 0, (i* Screen.height)/columns), Quaternion.identity);
+                GameObject go = Instantiate(cellPrefab,Vector3.zero, Quaternion.identity);
+                go.transform.SetParent(cellHolder.transform,false);
             }
         }
     }
