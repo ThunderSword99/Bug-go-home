@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cell : MonoBehaviour
 {
     public bool isVisited;
+    public Vector3 pos;
 
     public GameObject leftWall;
     public GameObject downWall;
