@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isVisited: 0
+  pos: {x: 0, y: 0, z: 0}
+  listWall: []
   leftWall: {fileID: 0}
   downWall: {fileID: 4601478223930436960}
   rightWall: {fileID: 4399769698371906139}
@@ -30,6 +32,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isVisited: 0
+  pos: {x: 0, y: 0, z: 0}
+  listWall: []
   leftWall: {fileID: 0}
   downWall: {fileID: 4601478223930436960}
   rightWall: {fileID: 4399769698371906139}
@@ -126,6 +130,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isVisited: 0
+  pos: {x: 0, y: 0, z: 0}
+  listWall:
+  - {fileID: 4601478223930436960}
+  - {fileID: 2056030255}
+  - {fileID: 4399769698371906139}
+  - {fileID: 6586859531414085633}
   leftWall: {fileID: 4601478223930436960}
   downWall: {fileID: 2056030255}
   rightWall: {fileID: 4399769698371906139}
