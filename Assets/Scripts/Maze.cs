@@ -132,7 +132,7 @@ public class Maze : MonoBehaviour
 
     private void DFS(Cell cell)
     {
-        cell.GetComponent<Image>().color = Color.red;
+        //cell.GetComponent<Image>().color = Color.red;
         cell.isVisited = true;
 
         int[] randomWay = suffefArray();
