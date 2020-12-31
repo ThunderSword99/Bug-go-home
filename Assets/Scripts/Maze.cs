@@ -6,6 +6,8 @@ using System;
 
 public class Maze : MonoBehaviour
 {
+    public static Maze instance;
+
     public GameObject wallprefab;
     public GameObject cellPrefab;
     public GameObject cellHolder;
@@ -16,8 +18,18 @@ public class Maze : MonoBehaviour
 
     int k=0;
    
-    //private int[4] _X = {};
-    //private int[4] _Y = {};
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else if(instance != this)
+        {
+            Destroy(gameObject);
+        }
+        
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +46,9 @@ public class Maze : MonoBehaviour
             }
         }
 
-        //DestroyRandomWall(listCell[3,3]);
-        //BFS();
         GenerateMap();
-        //int[] x = new int [4];
-        //x = suffefArray();
-        //Debug.Log(x[0] + " " + x[1] + " " + x[2] + " " + x[3]);
+        GameController.instance.SetBug();
+        GameController.instance.SetRandomTarget();
     }
     
     private void DestroyNeighborWall(Cell currentCell,int way)
