@@ -48,8 +48,6 @@ public class Maze : MonoBehaviour
         GameController.instance.SetRandomTarget();
     }
     
-    
-
     private void DestroyNeighborWall(Cell currentCell,int way)
     {
         try
@@ -184,6 +182,7 @@ public class Maze : MonoBehaviour
         ResetListCell();
         Cell firstCell = listCell[0,0].GetComponent<Cell>();
         BFS_FindPathToTarget();
+        BackTracking_GetPath(GameController.instance.targetHolder.GetComponent<Cell>(),(int) GameController.instance.targetHolder.GetComponent<Cell>().pos.z);
     }
 
     /*private void DFS_FindWayToTarget(Cell cell)
@@ -261,8 +260,35 @@ public class Maze : MonoBehaviour
                 }
                 catch
                 {
-                     //Debug.Log("Horrible things happened!");
+                     
                 }
+            }
+        }
+    }
+
+    private void BackTracking_GetPath(Cell cell,int val)
+    {
+        Debug.Log(val);
+        if (val==0)
+        {
+            return;
+        }
+        cell.GetComponent<Image>().color = Color.green;
+        float[] _X = {0f,1f,0f,-1f};
+        float[] _Y = {-1f,0f,1f,0f};
+        for (int i=0;i<4;i++)
+        {
+            try
+            {
+                Cell nextCell = listCell[(int)(cell.pos.x+_X[i]),(int)(cell.pos.y+_Y[i])].GetComponent<Cell>();
+                if ((int)nextCell.pos.z==val-1)
+                {
+                    BackTracking_GetPath(nextCell,(int)(nextCell.pos.z));
+                }
+            }
+            catch
+            {
+                continue;
             }
         }
     }
