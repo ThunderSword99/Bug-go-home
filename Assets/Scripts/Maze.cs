@@ -15,6 +15,8 @@ public class Maze : MonoBehaviour
     public int columns = 10;
     
     public GameObject[,] listCell;
+
+    public Stack<Transform> pathList = new Stack<Transform>();
    
     private void Awake()
     {
@@ -164,8 +166,6 @@ public class Maze : MonoBehaviour
 
     }
 
-    public List<Transform> pathList;
-
     private void ResetListCell()
     {
         for (int i=0;i< rows;i++)
@@ -180,6 +180,7 @@ public class Maze : MonoBehaviour
     public void FindTheWayToTarget()
     {
         ResetListCell();
+        pathList.Clear();
         Cell firstCell = listCell[0,0].GetComponent<Cell>();
         BFS_FindPathToTarget();
         BackTracking_GetPath(GameController.instance.targetHolder.GetComponent<Cell>(),(int) GameController.instance.targetHolder.GetComponent<Cell>().pos.z);
@@ -269,6 +270,7 @@ public class Maze : MonoBehaviour
     private void BackTracking_GetPath(Cell cell,int val)
     {
         Debug.Log(val);
+        pathList.Push(cell.transform);
         if (val==0)
         {
             return;
