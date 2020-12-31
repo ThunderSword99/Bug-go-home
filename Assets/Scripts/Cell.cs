@@ -19,6 +19,39 @@ public class Cell : MonoBehaviour
         return listWall.Count;
     }
 
+    public bool isWallDestroyed(int way)
+    {
+        if (way==1)
+        {
+            if (leftWall==null)
+            {
+                return true;
+            }
+        }
+        else if (way==2)
+        {
+            if(downWall==null)
+            {
+                return true;
+            }
+        }
+        else if (way==3)
+        {
+            if (rightWall==null)
+            {
+                return true;
+            }
+        }
+        else if (way==4)
+        {
+            if (upWall==null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void DestroyWall(int i)
     {
         

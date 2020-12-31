@@ -15,8 +15,6 @@ public class Maze : MonoBehaviour
     public int columns = 10;
     
     public GameObject[,] listCell;
-
-    int k=0;
    
     private void Awake()
     {
@@ -31,7 +29,6 @@ public class Maze : MonoBehaviour
         
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         listCell = new GameObject[rows,columns];
@@ -51,6 +48,8 @@ public class Maze : MonoBehaviour
         GameController.instance.SetRandomTarget();
     }
     
+    
+
     private void DestroyNeighborWall(Cell currentCell,int way)
     {
         try
@@ -92,7 +91,7 @@ public class Maze : MonoBehaviour
     private void GenerateMap()
     {
         Cell firstCell = listCell[0,0].GetComponent<Cell>();
-        DFS(firstCell);
+        DFS_DeleteWall(firstCell);
     }
     
     private Cell getNextCell(Cell currentCell,int way)
@@ -139,18 +138,13 @@ public class Maze : MonoBehaviour
         return temp;
     }
 
-    private void DFS(Cell cell)
+    private void DFS_DeleteWall(Cell cell)
     {
         //cell.GetComponent<Image>().color = Color.red;
         cell.isVisited = true;
 
         int[] randomWay = suffefArray();
         
-        k++;
-        if (k>=130)
-        {
-            return;
-        }
 
         for (int i=0;i<4;i++)
         {
@@ -164,7 +158,7 @@ public class Maze : MonoBehaviour
             if (!nextCell.isVisited)
             {
                 DestroyWall(cell,randomWay[i]);
-                DFS(nextCell);
+                DFS_DeleteWall(nextCell);
             }
             
             
@@ -172,11 +166,63 @@ public class Maze : MonoBehaviour
 
     }
 
+    public List<Transform> pathList;
 
-    private void BFS()
+    private void ResetListCell()
     {
-        float[] _X = {1f,-1f,0f,0f};
-        float[] _Y = {0f,0f,-1f,1f};
+        for (int i=0;i< rows;i++)
+        {
+            for (int j=0;j<columns;j++)
+            {
+                listCell[i,j].GetComponent<Cell>().isVisited = false;   
+            }
+        }
+    }
+
+    public void FindTheWayToTarget()
+    {
+        ResetListCell();
+        Cell firstCell = listCell[0,0].GetComponent<Cell>();
+        BFS_FindPathToTarget();
+    }
+
+    /*private void DFS_FindWayToTarget(Cell cell)
+    {
+        if (cell.transform == GameController.instance.targetHolder.transform)
+        {
+            return;
+        }
+        cell.GetComponent<Image>().color = Color.red;
+        pathList.Add(cell.transform);
+        cell.isVisited = true;
+
+        int[] randomWay = suffefArray();
+
+        for (int i=0;i<4;i++)
+        {
+            Cell nextCell = getNextCell(cell,randomWay[i]);
+            
+            if (nextCell==null)
+            {
+                continue;
+            }
+
+            if (cell.isWallDestroyed(randomWay[i])  && !nextCell.isVisited)
+            {
+                DFS_FindWayToTarget(nextCell);
+            }
+
+
+           
+        }
+
+    }*/
+
+
+    private void BFS_FindPathToTarget()
+    {
+        float[] _X = {0f,1f,0f,-1f};
+        float[] _Y = {-1f,0f,1f,0f};
         Queue <GameObject> q = new Queue<GameObject>();
         q.Enqueue(listCell[0,0]);
         while(q.Count!=0)
@@ -184,13 +230,14 @@ public class Maze : MonoBehaviour
             GameObject go = q.Peek();
             Cell cell = go.GetComponent<Cell>();
             q.Dequeue();
-            Debug.Log(cell.pos);
+            if (cell.transform == GameController.instance.targetHolder.transform)
+            {
+                return;
+            }
             if (!cell.isVisited)
             {
                 cell.isVisited = true;
             }
-
-           
 
             for (int i=0;i<4;i++)
             {
@@ -204,10 +251,10 @@ public class Maze : MonoBehaviour
                     Cell tempCell = tempGo.GetComponent<Cell>();
                     
                     
-                    if (!tempCell.isVisited)
+                    if (!tempCell.isVisited && cell.isWallDestroyed(i+1))
                     {
                         tempCell.pos.z = pos.z;
-                        //tempGo.GetComponent<Image>().color = Color.red;
+                        tempGo.GetComponent<Image>().color = Color.red;
                         tempCell.isVisited = true;
                         q.Enqueue(tempGo);
                     }
