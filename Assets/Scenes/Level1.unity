@@ -321,7 +321,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1671493995}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -467,7 +467,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1671493995}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -781,11 +781,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bugSpeed: 5
+  bug: {fileID: 0}
+  target: {fileID: 0}
   bugHolder: {fileID: 0}
-  bug: {fileID: 4209914911512895001, guid: 47ce5edc35a6eed4e8094117e0a02182, type: 3}
+  bugPrefab: {fileID: 4209914911512895001, guid: 47ce5edc35a6eed4e8094117e0a02182,
+    type: 3}
   targetHolder: {fileID: 0}
-  target: {fileID: 8391474369766375510, guid: 31bf111868d755a47b38426f8c8df077, type: 3}
-  pathList: []
+  targetPrefab: {fileID: 8391474369766375510, guid: 31bf111868d755a47b38426f8c8df077,
+    type: 3}
   targetPos: {fileID: 0}
   idx: 0
 --- !u!1 &969001655
@@ -1156,8 +1159,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 395790077}
   - {fileID: 407012994}
+  - {fileID: 395790077}
   m_Father: {fileID: 371099400}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

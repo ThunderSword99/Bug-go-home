@@ -8,10 +8,13 @@ public class GameController : MonoBehaviour
 
     public float bugSpeed = 5f;
 
-    public GameObject bugHolder;
     public GameObject bug;
-    public GameObject targetHolder;
     public GameObject target;
+
+    public GameObject bugHolder;
+    public GameObject bugPrefab;
+    public GameObject targetHolder;
+    public GameObject targetPrefab;
 
     private bool isBugMoving = false;
 
@@ -33,8 +36,8 @@ public class GameController : MonoBehaviour
     public void SetBug()
     {
        bugHolder = Maze.instance.listCell[0,0];
-       GameObject go = Instantiate(bug,bugHolder.transform.position,Quaternion.identity);
-       go.transform.SetParent(bugHolder.transform,false);
+       bug = Instantiate(bugPrefab,bugHolder.transform.position,Quaternion.identity);
+       bug.transform.SetParent(bugHolder.transform,false);
     }
 
     public void SetRandomTarget()
@@ -42,8 +45,8 @@ public class GameController : MonoBehaviour
         int randomRow = Random.Range(0,13);
         int randomColumn = Random.Range(0,10);
         targetHolder = Maze.instance.listCell[randomRow,randomColumn];
-        GameObject go = Instantiate(target,targetHolder.transform.position,Quaternion.identity);
-        go.transform.SetParent(targetHolder.transform,false);
+        target = Instantiate(targetPrefab,targetHolder.transform.position,Quaternion.identity);
+        target.transform.SetParent(targetHolder.transform,false);
     }
 
     public void AutoMove()
@@ -58,21 +61,25 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(bug.GetComponent<RectTransform>().anchoredPosition);
         if (isBugMoving)
         {
-            float step = bugSpeed*Time.deltaTime;
             if (LineController.instance.points.Length>0)
             {
-                targetPos = LineController.instance.points[idx];
+                try
+                {
+                    targetPos = LineController.instance.points[idx];
+                }
+                catch
+                {
+                    return;
+                }
                 if (!isGetToDestination(bug.transform,targetPos))
                 {
-                    
+                    float step = bugSpeed*Time.deltaTime;
                     bug.transform.position = Vector3.MoveTowards(bug.transform.position,targetPos.position,step);
                 }
                 else
                 {
-                    Debug.Log(bug.transform.position + " - " + targetPos.position);
                     idx++;
                 }
             }
