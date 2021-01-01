@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Cell.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\LineController.cs" />
      <Compile Include="Assets\Scripts\Maze.cs" />
      <Compile Include="Assets\Scripts\Resize.cs" />
      <Compile Include="Assets\Scripts\Stage.cs" />

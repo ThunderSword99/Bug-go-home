@@ -301,8 +301,9 @@ GameObject:
   m_Component:
   - component: {fileID: 395790077}
   - component: {fileID: 395790078}
+  - component: {fileID: 395790079}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: LineController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,11 +321,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1671493995}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -154, y: 46}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &395790078
@@ -345,6 +346,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -368,7 +370,6 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 1, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.34452498
@@ -377,7 +378,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.6285706
+        value: 0.1857186
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -390,24 +391,24 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key1: {r: 1, g: 0.60573053, b: 0, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
+      ctime1: 29684
       ctime2: 0
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime0: 35659
+      atime1: 53199
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
@@ -415,7 +416,7 @@ LineRenderer:
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -424,6 +425,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &395790079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395790076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7340657dd5f1344b7500fd5fdca0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &407012993
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +467,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1671493995}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -766,10 +780,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0493409a3a56c244998c4a46f6ad30ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bugSpeed: 5
   bugHolder: {fileID: 0}
   bug: {fileID: 4209914911512895001, guid: 47ce5edc35a6eed4e8094117e0a02182, type: 3}
   targetHolder: {fileID: 0}
   target: {fileID: 8391474369766375510, guid: 31bf111868d755a47b38426f8c8df077, type: 3}
+  pathList: []
+  targetPos: {fileID: 0}
+  idx: 0
 --- !u!1 &969001655
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +952,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1183618054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 820461842}
+        m_MethodName: AutoMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1183618054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,8 +1156,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 407012994}
   - {fileID: 395790077}
+  - {fileID: 407012994}
   m_Father: {fileID: 371099400}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1258,6 +1287,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1188545261}
         m_MethodName: FindTheWayToTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 395790079}
+        m_MethodName: SetUpLine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

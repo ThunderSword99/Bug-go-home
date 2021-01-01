@@ -48,6 +48,7 @@ public class Maze : MonoBehaviour
         GenerateMap();
         GameController.instance.SetBug();
         GameController.instance.SetRandomTarget();
+        //FindTheWayToTarget();
     }
     
     private void DestroyNeighborWall(Cell currentCell,int way)
@@ -269,12 +270,13 @@ public class Maze : MonoBehaviour
 
     private void BackTracking_GetPath(Cell cell,int val)
     {
-        Debug.Log(val);
-        pathList.Push(cell.transform);
+        //Debug.Log(val);
         if (val==0)
         {
+            pathList.Push(listCell[0,0].transform);
             return;
         }
+        pathList.Push(cell.transform);
         cell.GetComponent<Image>().color = Color.green;
         float[] _X = {0f,1f,0f,-1f};
         float[] _Y = {-1f,0f,1f,0f};
