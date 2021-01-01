@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
                 }
                 catch
                 {
+                    LineController.instance.gameObject.SetActive(false);
                     return;
                 }
                 if (!isGetToDestination(bug.transform,targetPos))
