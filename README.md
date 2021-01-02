@@ -1,4 +1,7 @@
 # Bug-go-home
+<div align="center">
+	<img src="https://user-images.githubusercontent.com/52252046/103452910-1d807600-4d07-11eb-827a-e2121e7ebc27.png" alt="Wa du hek" height="200" width="200">
+</div>
 
 ## About Project
 - This project was created by [me](https://github.com/ThunderSword99)
@@ -27,6 +30,6 @@ Task 3:
 <div align="center">
 	<img src="https://user-images.githubusercontent.com/52252046/103452811-e362a480-4d05-11eb-8f91-5a7ac1853f1d.png" alt="Wa du hek" height="853" width="480">
 	<img src="https://user-images.githubusercontent.com/52252046/103452815-ed84a300-4d05-11eb-8aa8-32ba1be3aece.png" alt="Wa du hek" height="853" width="480">
- <img src="https://user-images.githubusercontent.com/52252046/103452817-f2495700-4d05-11eb-9fcb-6ac842303f4b.png" alt="Wa du hek" height="853" width="480">
- <img src="https://user-images.githubusercontent.com/52252046/103452822-f7a6a180-4d05-11eb-9e2e-70b8b4e11527.png" alt="Wa du hek" height="853" width="480">
+	<img src="https://user-images.githubusercontent.com/52252046/103452817-f2495700-4d05-11eb-9fcb-6ac842303f4b.png" alt="Wa du hek" height="853" width="480">
+	<img src="https://user-images.githubusercontent.com/52252046/103452822-f7a6a180-4d05-11eb-9e2e-70b8b4e11527.png" alt="Wa du hek" height="853" width="480">
 </div>
