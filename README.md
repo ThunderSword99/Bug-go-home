@@ -25,9 +25,12 @@ Task 3:
 - Optimize CPU, GPU, Ram, Buil size (✓ 30%)
 - Build android apk (✓)
 - Push project to github and share the link (✓)
-## Some image about Bug-go-home
+## My words want to say
+- I'm not great at English so I want to say in Vietnamese:
+`Em rất cám ơn công ty đã cho em cơ hội được làm bài test để em biết trình độ của em. Phần em làm chỉ được tầm 70-80% project. Rất mong anh/chị cho em được qua bài test này. Em rất muốn được vào công ty mình ạ ^^`
+## Some images about Bug-go-home
 
-<div align="center">
+<div>
 	<img src="https://user-images.githubusercontent.com/52252046/103452811-e362a480-4d05-11eb-8f91-5a7ac1853f1d.png" alt="Wa du hek" height="853" width="480">
 	<img src="https://user-images.githubusercontent.com/52252046/103452815-ed84a300-4d05-11eb-8aa8-32ba1be3aece.png" alt="Wa du hek" height="853" width="480">
 	<img src="https://user-images.githubusercontent.com/52252046/103452817-f2495700-4d05-11eb-9fcb-6ac842303f4b.png" alt="Wa du hek" height="853" width="480">
