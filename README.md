@@ -38,3 +38,11 @@ Task 3:
 <div>
 	<img src="https://user-images.githubusercontent.com/52252046/103452815-ed84a300-4d05-11eb-8aa8-32ba1be3aece.png" alt="Wa du hek" height="853" width="480">
 </div>
+
+<div>
+	<img src="https://user-images.githubusercontent.com/52252046/103452817-f2495700-4d05-11eb-9fcb-6ac842303f4b.png" alt="Wa du hek" height="853" width="480">
+</div>
+
+<div>
+	<img src="https://user-images.githubusercontent.com/52252046/103452822-f7a6a180-4d05-11eb-9e2e-70b8b4e11527.png" alt="Wa du hek" height="853" width="480">
+</div>
