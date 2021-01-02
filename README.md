@@ -5,7 +5,7 @@
 
 ## About Project
 - This project was created by [me](https://github.com/ThunderSword99)
-- This is also a skill contest to apply job to Zitga Inc.
+- This is also a skill contest to apply for Fresher job in Zitga Inc.
 ## About contest tasks and what i've done.
 You have two tasks in this test
 
