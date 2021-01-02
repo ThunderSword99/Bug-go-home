@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Stage : MonoBehaviour
 {
-    private int currentLevel;
+    public int currentLevel;
     private int star=0;
     private bool isLock=true;
 
@@ -19,8 +19,11 @@ public class Stage : MonoBehaviour
 
     public void UnlockStage()
     {
-        isLock = false;
-        LockGo.active = false;
+        if (currentLevel != 1)
+        {
+            isLock = false;
+            LockGo.active = false;
+        }
     }
 
     public void SetLevel(int i)
@@ -61,7 +64,7 @@ public class Stage : MonoBehaviour
     void Start()
     {
        TextGo.GetComponent<Text>().text = currentLevel.ToString();
-       if (isLock)
+       if (isLock && currentLevel!=1)
        {
             LockGo.active = true;
             Star1.active = false;

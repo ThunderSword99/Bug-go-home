@@ -9,12 +9,25 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        MenuCanvas.gameObject.SetActive(false);
+        if (MenuCanvas!=null)
+        {
+            MenuCanvas.gameObject.SetActive(false);
+        }
     }
 
     public void TurnOnOffMenuCanvas()
     {
         MenuCanvas.gameObject.SetActive(!MenuCanvas.gameObject.active);
+    }
+
+    public void SelectLevel()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("HomeLobby");
     }
 
     public void Next()

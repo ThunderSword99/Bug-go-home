@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
     void LoadLevel()
     {
-        for (int i=1;i<=numberOfLevels;i++)
+        for (int i=2;i<=numberOfLevels;i++)
         {
             GameObject go = Instantiate(levelPrefab, transform.position, Quaternion.identity);
             go.GetComponent<Stage>().SetLevel(i);
