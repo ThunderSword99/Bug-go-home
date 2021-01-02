@@ -8,6 +8,7 @@
 - This is also a skill contest to apply job to Zitga Inc.
 ## About contest tasks and what i've done.
 You have two tasks in this test
+
 Task 1: Use assets in stage folder after that generate a scroll map like map.PNG image
 - Map have 999 stages (✓)
 - The first stage has the "tutorial" word above (✓)
