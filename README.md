@@ -30,7 +30,7 @@ You have two tasks in this test
 - Push project to github and share the link (✓)
 ## My words want to say
 - I'm not great at English so I want to say in Vietnamese:
-`Em rất cám ơn công ty đã cho em cơ hội được làm bài test để em biết trình độ của em. Phần em làm chỉ được tầm 70-80% project. Rất mong anh/chị cho em được qua bài test này. Em rất muốn được vào công ty mình ạ ^^`
+`Em rất cám ơn công ty đã cho em cơ hội được làm bài test để em biết trình độ của em. Phần em làm chỉ được tầm 70-80% project. Rất mong anh/chị châm chước cho em bài test này. Em rất muốn được vào công ty mình ạ ^^`
 ## Some images about Bug-go-home
 
 <div>
